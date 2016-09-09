@@ -13,6 +13,8 @@
 # Aggregate abundance at genus level because there were many
 # taxonomic adjustments at the species level throughout the time-series
 
+##' Data were downloaded from IMOS website on 28 May 2015
+
 library(ggplot2)
 library(dplyr)
 options(dplyr.print_max = 1e9)

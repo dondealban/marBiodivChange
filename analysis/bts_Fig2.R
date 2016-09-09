@@ -107,6 +107,18 @@ slopeDiv1 <- ddply(tempDiv, .(subSiteID), head, n = 1)
 slopeRich <- slopeRich1
 slopeDiv <- slopeDiv1
 
+# save the fitted slopes and export as csv
+# (for Mark Vellend)
+head(slopeRich)
+richDF <- slopeRich %>% 
+  dplyr::select(studyName, studySub, site, subSiteID, Scale, fitSlope)
+head(richDF)
+write.csv(richDF, "output/richness_slopes.csv")
+
+divDF <- slopeDiv %>% 
+  dplyr::select(studyName, studySub, site, subSiteID, Scale, fitSlope)
+write.csv(divDF, "output/diversity_slopes.csv")
+
 ############################################################
 ############################################################
 # 6 panel figure
